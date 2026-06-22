@@ -1,0 +1,20 @@
+<section id="projects" class="section">
+  <p class="eyebrow">Projects</p>
+
+  <div class="project-card" *ngFor="let project of projects" appReveal>
+    <div class="project-head">
+      <h3>{{ project.name }}</h3>
+      <span class="period">{{ project.period }}</span>
+    </div>
+
+    <p class="summary">{{ project.summary }}</p>
+
+    <ul class="highlights">
+      <li *ngFor="let point of project.highlights">{{ point }}</li>
+    </ul>
+
+    <div class="tech">
+      <span class="tech-tag" *ngFor="let t of project.tech">{{ t }}</span>
+    </div>
+  </div>
+</section>

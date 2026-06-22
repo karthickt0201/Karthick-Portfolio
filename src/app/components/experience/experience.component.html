@@ -1,0 +1,32 @@
+<section id="experience" class="section">
+  <p class="eyebrow">Experience</p>
+
+  <div class="timeline" *ngFor="let job of experience" appReveal>
+    <div class="timeline-marker"></div>
+    <div class="timeline-content">
+      <div class="job-head">
+        <h3>{{ job.role }}</h3>
+        <span class="period">{{ job.period }}</span>
+      </div>
+      <p class="company">{{ job.company }} · {{ job.location }}</p>
+      <ul>
+        <li *ngFor="let point of job.points">{{ point }}</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="side-grid">
+    <div class="side-card" appReveal>
+      <p class="side-label">Education</p>
+      <p class="side-title">{{ education.degree }}</p>
+      <p class="side-detail">{{ education.school }}</p>
+      <p class="side-meta">{{ education.period }} · {{ education.detail }}</p>
+    </div>
+    <div class="side-card" appReveal>
+      <p class="side-label">Certification</p>
+      <p class="side-title">{{ certification.name }}</p>
+      <p class="side-detail">{{ certification.issuer }}</p>
+      <p class="side-meta">{{ certification.period }}</p>
+    </div>
+  </div>
+</section>

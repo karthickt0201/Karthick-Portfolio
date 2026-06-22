@@ -1,0 +1,32 @@
+<header class="header">
+  <div class="header-inner">
+    <a href="#top" class="logo" (click)="closeMenu()">&lt;KT/&gt;</a>
+
+    <nav class="nav-desktop" aria-label="Section navigation">
+      <a *ngFor="let link of links" [href]="link.href">{{ link.label }}</a>
+    </nav>
+
+    <a class="btn btn-primary resume-btn" href="assets/resume/Karthick_T_Resume_Software_Engineer_V2.pdf" download>
+      Resume
+    </a>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="menuOpen()"
+      aria-label="Toggle menu"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <nav class="nav-mobile" *ngIf="menuOpen()" aria-label="Mobile section navigation">
+    <a *ngFor="let link of links" [href]="link.href" (click)="closeMenu()">{{ link.label }}</a>
+    <a class="btn btn-primary" href="assets/resume/Karthick_T_Resume_Software_Engineer_V2.pdf" download (click)="closeMenu()">
+      Download resume
+    </a>
+  </nav>
+</header>

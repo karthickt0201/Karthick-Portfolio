@@ -1,0 +1,11 @@
+<section id="about" class="section">
+  <p class="eyebrow">About</p>
+  <p class="about-text" appReveal>{{ profile.about }}</p>
+
+  <div class="stats">
+    <div class="stat" *ngFor="let stat of stats" appReveal>
+      <span class="stat-value">{{ stat.value }}</span>
+      <span class="stat-label">{{ stat.label }}</span>
+    </div>
+  </div>
+</section>

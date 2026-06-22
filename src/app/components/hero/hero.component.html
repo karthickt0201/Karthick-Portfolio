@@ -1,0 +1,30 @@
+<section id="top" class="hero">
+  <div class="hero-inner">
+    <div class="terminal" role="img" aria-label="Terminal animation introducing Karthick T, Angular Developer">
+      <div class="terminal-bar">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+        <span class="terminal-title">karthick&#64;portfolio</span>
+      </div>
+      <div class="terminal-body">
+        <div class="line" *ngFor="let line of visibleLines()">
+          <span *ngIf="line.prompt" class="prompt">$</span>
+          <span [class.ok]="line.status === 'ok'">{{ line.typed }}</span>
+          <span *ngIf="line.status === 'ok' && line.done" class="check">✓</span>
+        </div>
+        <div class="cursor" *ngIf="!heroRevealed()">_</div>
+      </div>
+    </div>
+
+    <div class="hero-copy" [class.is-visible]="heroRevealed()">
+      <h1>{{ profile.name }}</h1>
+      <p class="role">{{ profile.title }}</p>
+      <p class="tagline">{{ profile.tagline }}</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#projects">View projects</a>
+        <a class="btn btn-ghost" href="#contact">Get in touch</a>
+      </div>
+    </div>
+  </div>
+</section>

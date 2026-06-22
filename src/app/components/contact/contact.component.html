@@ -1,0 +1,31 @@
+<section id="contact" class="section">
+  <p class="eyebrow">Contact</p>
+
+  <div class="contact-card" appReveal>
+    <h2>Let's talk.</h2>
+    <p class="sub">Open to Angular and frontend roles, starting September 1, 2026.</p>
+
+    <div class="contact-grid">
+      <a class="contact-item" href="mailto:{{ profile.email }}">
+        <span class="label">Email</span>
+        <span class="value">{{ profile.email }}</span>
+      </a>
+      <a class="contact-item" href="tel:{{ profile.phone }}">
+        <span class="label">Phone</span>
+        <span class="value">{{ profile.phone }}</span>
+      </a>
+      <a class="contact-item" [href]="profile.linkedinUrl" target="_blank" rel="noopener">
+        <span class="label">LinkedIn</span>
+        <span class="value">{{ profile.linkedin }}</span>
+      </a>
+      <div class="contact-item">
+        <span class="label">Location</span>
+        <span class="value">{{ profile.location }}</span>
+      </div>
+    </div>
+
+    <a class="btn btn-primary resume-cta" href="assets/resume/Karthick_T_Resume_Software_Engineer_V2_Software_Engineer_V2.pdf" download>
+      Download resume
+    </a>
+  </div>
+</section>

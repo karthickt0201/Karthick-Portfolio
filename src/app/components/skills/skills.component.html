@@ -1,0 +1,26 @@
+<section id="stack" class="section">
+  <p class="eyebrow">Stack</p>
+
+  <div class="editor" appReveal>
+    <div class="tabs" role="tablist" aria-label="Skill categories">
+      <button
+        *ngFor="let group of groups; let i = index"
+        type="button"
+        role="tab"
+        class="tab"
+        [class.active]="activeIndex() === i"
+        [attr.aria-selected]="activeIndex() === i"
+        (click)="select(i)"
+      >
+        {{ group.fileName }}
+      </button>
+    </div>
+
+    <div class="editor-body" role="tabpanel">
+      <p class="group-label">// {{ active.label }}</p>
+      <div class="chips">
+        <span class="chip" *ngFor="let item of active.items">{{ item }}</span>
+      </div>
+    </div>
+  </div>
+</section>
